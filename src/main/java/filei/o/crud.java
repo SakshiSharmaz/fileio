@@ -42,7 +42,7 @@ String s1;
         bw.close();
     }
     public void deletefile(){
-        File f=new File(deletef());
+        File f=new File(deletefilepath());
         f.delete();
     }
 }

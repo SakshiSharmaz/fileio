@@ -17,7 +17,7 @@ public  abstract class paths {
         Scanner append=new Scanner(System.in);
         return append.nextLine();
     }
-    public String deletef(){
+    public String deletefilepath(){
         System.out.println("enter the delete file path");
         Scanner delete=new Scanner(System.in);
         return delete.nextLine();
