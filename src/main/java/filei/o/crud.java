@@ -1,15 +1,18 @@
 package filei.o;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.util.Scanner;
 
 public class crud extends paths {
+    private static Logger logger =LogManager.getLogger(crud.class);
     public  void createfile() throws IOException {
         File file=new File(create());
       boolean b=  file.createNewFile();
       if(b==true)
-          System.out.println("file creaTed Sucssfully");
-      else System.out.println("Sorry file not created");
+      { System.out.println("file creaTed Sucssfully");
+      logger.info("file got created"); }
+      else {System.out.println("Sorry file not created"); logger.warn("you did something wrong");}
       }
       public void readfile() throws IOException {
         String s;
@@ -19,7 +22,7 @@ public class crud extends paths {
           while(( s=br.readLine())!=null){
               System.out.println(s);
           }
-
+          logger.info("file was read");
       }
     public void writefile() throws IOException {
 Scanner writ=new Scanner(System.in);
@@ -31,6 +34,7 @@ String s1;
         s1=writ.nextLine();
         bw.write(s1);
         bw.close();
+        logger.info("data was written into file");
     }
     public void appendfile() throws IOException {
         Scanner writ=new Scanner(System.in);
@@ -40,9 +44,11 @@ String s1;
         System.out.println("enter the data to be append in file");
         bw.write(writ.nextLine());
         bw.close();
+        logger.info("data was appended into file");
     }
     public void deletefile(){
         File f=new File(deletefilepath());
         f.delete();
+        logger.info("file was deleted");
     }
 }
