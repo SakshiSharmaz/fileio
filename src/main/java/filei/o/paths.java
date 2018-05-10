@@ -13,7 +13,7 @@ public  abstract class paths {
         return input.nextLine();
     }
     public String output(){
-        System.out.println("enter the path of filein  which you want to write");
+        System.out.println("enter the path of file in  which you want to write");
         Scanner output=new Scanner(System.in);
         log.info("file path will be entered for writing file");
         return output.nextLine();
