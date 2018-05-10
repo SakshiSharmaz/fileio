@@ -10,7 +10,7 @@ public class crud extends paths {
         File file=new File(create());
       boolean b=  file.createNewFile();
       if(b==true)
-      { System.out.println("file creaTed Sucssfully");
+      { System.out.println("file created Succssfully");
       logger.info("file got created"); }
       else {System.out.println("Sorry file not created"); logger.warn("you did something wrong");}
       }
